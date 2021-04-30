@@ -1,2 +1,2 @@
 # Stude
-a Student's Partner of the Campus
+# A Web App as a Student's Partner
