@@ -1,0 +1,198 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    Document Title
+    =============================================
+    -->
+    <title>Stude | Be All You Are!</title>
+    <!--
+    Favicons
+    =============================================
+    -->
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static "assets/images/favicons/apple-icon-57x57.png" %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static "assets/images/favicons/apple-icon-60x60.png" %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static "assets/images/favicons/apple-icon-72x72.png" %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static "assets/images/favicons/apple-icon-76x76.png" %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static "assets/images/favicons/apple-icon-114x114.png" %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static "assets/images/favicons/apple-icon-120x120.png" %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static "assets/images/favicons/apple-icon-144x144.png" %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static "assets/images/favicons/apple-icon-152x152.png" %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static "assets/images/favicons/android-icon-192x192.png" %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static "assets/images/favicons/favicon-32x32.png" %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static "assets/images/favicons/favicon-96x96.png" %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static "assets/images/favicons/favicon-16x16.png" %}">
+    <link rel="manifest" href="{% static "/manifest.json" %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static "assets/images/favicons/ms-icon-144x144.png" %}">
+    <meta name="theme-color" content="#ffffff">
+    <!--
+    Stylesheets
+    =============================================
+
+    -->
+    <!-- Default stylesheets-->
+    <link href="{% static "assets/lib/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="{% static "https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" %}" rel="stylesheet">
+    <link href="{% static "https://fonts.googleapis.com/css?family=Volkhov:400i" %}" rel="stylesheet">
+    <link href="{% static "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" %}" rel="stylesheet">
+    <link href="{% static "assets/lib/animate.css/animate.css" %}" rel="stylesheet">
+    <link href="{% static "assets/lib/components-font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href="{% static "assets/lib/et-line-font/et-line-font.css" %}" rel="stylesheet">
+    <link href="{% static "assets/lib/flexslider/flexslider.css" %}" rel="stylesheet">
+    <link href="{% static "assets/lib/owl.carousel/dist/assets/owl.carousel.min.css" %}" rel="stylesheet">
+    <link href="{% static "/lib/owl.carousel/dist/assets/owl.theme.default.min.css" %}" rel="stylesheet">
+    <link href="{% static "assets/lib/magnific-popup/dist/magnific-popup.css" %}" rel="stylesheet">
+    <link href="{% static "assets/lib/simple-text-rotator/simpletextrotator.css" %}" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="{% static "assets/css/style.css" %}" rel="stylesheet">
+    <link id="color-scheme" href="{% static "assets/css/colors/default.css" %}" rel="stylesheet">
+  </head>
+  <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+    <main>
+      <div class="page-loader">
+        <div class="loader">Loading...</div>
+      </div>
+
+
+
+      <nav class="navbar navbar-custom navbar-transparent navbar-fixed-top one-page" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="{% url 'home' %}">Stude</a>
+          </div>
+          <div class="collapse navbar-collapse" id="custom-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Blogs</a>
+                <ul class="dropdown-menu">
+                  <li><a href="{% url 'create_blog' %}">Write Blogs</a></li>
+                  <li><a href="{% url 'blog_view' %}">Read Blogs</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Notes</a>
+                <ul class="dropdown-menu">
+                  <li><a href="{% url 'available_notes' %}">Available Notes</a></li>
+                  <li><a href="{% url 'upload_notes' %}">Upload Notes</a></li>
+                  <li><a href="{% url 'request_notes' %}">Request Notes</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown"><a class="dropdown-scroll" href="{% url 'events_view' %}">Opportunities</a></li>
+
+              <li><a class="section-scroll"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </a></li>
+                  <li><a class="section-scroll">welcome, {{ request.user.username }} |</a></li>
+                  <li><a class="section-scroll" href="{% url 'logout' %}">logout</a></li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section class="home-section home-full-height bg-dark bg-gradient" id="home" data-background="{% static "assets/images/blog.jpg" %}">
+
+
+        <div class="titan-caption">
+          <div class="caption-content">
+            <div class="font-alt mb-30 titan-title-size-1">“Don’t focus on having a great blog. Focus on producing a blog that’s great for your readers.”</div>
+            <div class="font-alt mb-40 titan-title-size-4">Write your own blog</div>
+          </div>
+        </div>
+      </section>
+      <div class="main">
+        <section class="module" id="services">
+          <div class="container">
+              <h4 class="font-alt mb-0">Create your blog</h4>
+                <hr class="divider-w mt-10 mb-20">
+              <form class="form" enctype="multipart/form-data" method="POST">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <label for="title">Title</label>
+                    <input class="form-control input-lg" name="title" id="title" type="text" placeholder="Write a catchy title for your blog"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <input class="form-control" name="description" type="text" id="description" placeholder="Describe your blog in about two lines"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="category">Category</label>
+                    <input class="form-control input-sm" name="category" type="text" id="category" placeholder="Choose a category. Ex: Science, Business"/>
+                  </div>
+                  <label for="body">Body</label>
+                  <textarea id="body" name="body" class="form-control" rows="7" placeholder="Here you can pen down the body of you blog"></textarea>
+                  <div class="form-group">
+                    <label for="image">Thumbnail/Image</label>
+                    <input class="form-control input-lg" accept="image/*" name="image" type="file" id="image" placeholder="Choose a image for the thumbnail or just an image for your blog"/>
+                  </div>
+
+                  <button class="btn btn-b btn-round" type="submit">Submit</button>&nbsp;
+              </form>
+
+
+
+          </div>
+        </section>
+
+
+
+        </section>
+        <div class="module-small bg-dark">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="widget">
+                  <h5 class="widget-title font-alt">About Stude</h5>
+                  <p>The languages only differ in their grammar, their pronunciation and their most common words.</p>
+                  <p>Phone: +1 234 567 89 10</p>Fax: +1 234 567 89 10
+                  <p>Email:<a href="#">somecompany@example.com</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider-d">
+        <footer class="footer bg-dark">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="copyright font-alt">&copy; 2021&nbsp;<a href="index.html">Stude</a>, All Rights Reserved</p>
+              </div>
+              <div class="col-sm-6">
+                <div class="footer-social-links"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-skype"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+      <script async="" defer="" src="{% static "https://maps.googleapis.com/maps/api/js?key=AIzaSyDK2Axt8xiFYMBMDwwG1XzBQvEbYpzCvFU" %}"></script>
+    </main>
+    <!--
+    JavaScripts
+    =============================================
+    -->
+    <script src="{% static "assets/lib/jquery/dist/jquery.js" %}"></script>
+    <script src="{% static "assets/lib/bootstrap/dist/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "assets/lib/wow/dist/wow.js" %}"></script>
+    <script src="{% static "assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js" %}"></script>
+    <script src="{% static "assets/lib/isotope/dist/isotope.pkgd.js" %}"></script>
+    <script src="{% static "assets/lib/imagesloaded/imagesloaded.pkgd.js" %}"></script>
+    <script src="{% static "assets/lib/flexslider/jquery.flexslider.js" %}"></script>
+    <script src="{% static "assets/lib/owl.carousel/dist/owl.carousel.min.js" %}"></script>
+    <script src="{% static "assets/lib/smoothscroll.js" %}"></script>
+    <script src="{% static "assets/lib/magnific-popup/dist/jquery.magnific-popup.js" %}"></script>
+    <script src="{% static "assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js" %}"></script>
+    <script async="" defer="" src="{% static "https://maps.googleapis.com/maps/api/js?key=AIzaSyDK2Axt8xiFYMBMDwwG1XzBQvEbYpzCvFU" %}"></script>
+    <script src="{% static "assets/js/plugins.js" %}"></script>
+    <script src="{% static "assets/js/main.js" %}"></script>
+  </body>
+</html>
